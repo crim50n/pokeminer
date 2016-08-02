@@ -6,13 +6,13 @@
 FROM python:2.7-alpine
 
 # Default port the webserver runs on
-EXPOSE 5000
+EXPOSE 8000
 
 # Working directory for the application
 WORKDIR /usr/src/app
 
 # Set Entrypoint with hard-coded options
-ENTRYPOINT ["python", "./runserver.py", "--host", "0.0.0.0"]
+ENTRYPOINT ["python", "./web.py", "--host", "0.0.0.0", "--port", "8000"]
 
 # Set default options when container is run without any command line arguments
 CMD ["-h"]
